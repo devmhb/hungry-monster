@@ -61,7 +61,7 @@ const displayMeal = (data) => {
   let singleMeal = mealObj[0];
   mealsElement.innerHTML = `
     <div class="single-meal">
-    <img src="${singleMeal.strMealThumb}" alt="" />
+    <img src="${singleMeal.strMealThumb}" alt="" class="single-meal-img" />
     <h1 class="meal-title">${singleMeal.strMeal}</h1>
     <p class="ingredients">Ingredients</p>
       <ul class="lists">
