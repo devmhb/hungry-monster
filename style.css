@@ -99,9 +99,11 @@ a {
   -ms-flex-pack: center;
   justify-content: center;
   margin-bottom: 4rem;
+  width: 100%;
 }
 
 .meals .single-meal {
+  width: 100%;
   max-width: 80rem;
   margin: 0 auto;
 }
@@ -190,8 +192,13 @@ a {
   border-radius: 2rem;
 }
 
-@media only screen and (max-width: 60rem) {
+@media only screen and (max-width: 600px) {
   .form {
     width: 100%;
+  }
+
+  .single-meal-img {
+    width: 100%;
+    height: auto;
   }
 }
