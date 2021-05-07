@@ -35,6 +35,10 @@ a {
   width: 100% !important;
 }
 
+.navbar-collapse {
+  flex-grow: 0 !important;
+}
+
 .container-fluid {
   padding: 1rem 0 !important;
 }
