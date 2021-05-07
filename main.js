@@ -13,22 +13,10 @@ form.addEventListener("submit", (e) => {
   setTimeout(() => {
     search.value = "";
   }, 1000);
-
-  let firstElement = mealsElement.firstElementChild;
-
-  // Remove error msg and single meal element when user search
-  if (firstElement) {
-    if (firstElement.classList.contains("single-meal")) {
-      firstElement.remove();
-    } else if (firstElement.classList.contains("error")) {
-      firstElement.remove();
-    }
-  }
 });
 
-const displayMeals = (data) => {
-  let meals = data.meals;
-  meals.forEach((meal) => {
+const addMeals = (mealsInfo) => {
+  mealsInfo.forEach((meal) => {
     const mealElement = document.createElement("div");
     mealElement.setAttribute("class", "meal");
 
@@ -41,6 +29,16 @@ const displayMeals = (data) => {
     mealElement.innerHTML = mealContent;
     mealsElement.appendChild(mealElement);
   });
+};
+
+const displayMeals = (data) => {
+  let meals = data.meals;
+  if (mealsElement.hasChildNodes()) {
+    mealsElement.innerHTML = "";
+    addMeals(meals);
+  } else {
+    addMeals(meals);
+  }
 };
 
 const displayErrMsg = (err) => {
